@@ -11,12 +11,8 @@
                 <table>
                     <tbody>
                         <tr>
-                            <th>タスク名</th>
-                            <td><c:out value="${task.task_name}" /></td>
-                        </tr>
-                        <tr>
-                            <th>タスク詳細</th>
-                            <td><c:out value="${task.task_detail}" /></td>
+                            <th>タスク内容</th>
+                            <td><c:out value="${task.content}" /></td>
                         </tr>
                         <tr>
                             <th>追加日時</th>

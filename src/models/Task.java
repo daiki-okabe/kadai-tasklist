@@ -26,11 +26,8 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "task_name", length = 255, nullable = false)
-    private String task_name;
-
-    @Column(name = "task_detail", length = 255, nullable = true)
-    private String task_detail;
+    @Column(name = "content", length = 256, nullable = false)
+    private String content;
 
     @Column(name = "imput_date", nullable = false)
     private Timestamp imput_date;
@@ -46,20 +43,12 @@ public class Task {
         this.id = id;
     }
 
-    public String getTask_name() {
-        return task_name;
+    public String getContent() {
+        return content;
     }
 
-    public void setTask_name(String task_name) {
-        this.task_name = task_name;
-    }
-
-    public String getTask_detail() {
-        return task_detail;
-    }
-
-    public void setTask_detail(String task_detail) {
-        this.task_detail = task_detail;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Timestamp getImput_date() {

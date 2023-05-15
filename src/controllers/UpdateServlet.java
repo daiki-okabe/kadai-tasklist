@@ -39,11 +39,8 @@ public class UpdateServlet extends HttpServlet {
             // 該当のIDのメッセージ1件のみをデータベースから取得
             Task t = em.find(Task.class, (Integer)(request.getSession().getAttribute("id")));
 
-            String task_name = request.getParameter("task_name");
-            t.setTask_name(task_name);
-
-            String task_detail= request.getParameter("task_detail");
-            t.setTask_detail(task_detail);
+            String content = request.getParameter("content");
+            t.setContent(content);
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             t.setUpdate_date(currentTime);
