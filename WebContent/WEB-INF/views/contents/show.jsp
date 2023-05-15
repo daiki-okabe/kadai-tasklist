@@ -4,7 +4,9 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
 
-<h2>id : ${test.id} のメッセージ詳細ページ</h2>
+        <c:choose>
+            <c:when test="${task!= null}">
+                <h2>ID : ${task.id} のタスク詳細</h2>
 
                 <table>
                     <tbody>
@@ -26,9 +28,14 @@
                         </tr>
                     </tbody>
                 </table>
+            </c:when>
+            <c:otherwise>
+                <h2>お探しのデータは見つかりませんでした。</h2>
+            </c:otherwise>
+        </c:choose>
 
         <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
-        <p><a href="${pageContext.request.contextPath}/edit?id=${message.id}">タスクを編集する</a></p>
+        <p><a href="${pageContext.request.contextPath}/edit?id=${task.id}">タスクを編集する</a></p>
 
     </c:param>
 </c:import>
